@@ -8,8 +8,8 @@
 
   <browser:viewlet
      name="natural-resources"
-     for="plone.app.contenttypes.interfaces.IDocument"
-     manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+     for="politikus.extractives.content.extractive_concession.IExtractiveConcession"
+     manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
      layer="politikus.naturalresource.interfaces.IPolitikusNaturalresourceLayer"
      class=".natural_resources.NaturalResources"
      template="natural-resources.pt"

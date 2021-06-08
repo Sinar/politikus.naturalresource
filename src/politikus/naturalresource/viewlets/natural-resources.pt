@@ -1,3 +1,21 @@
-<div class="days_to_conf">
-    ${view/message}
+<div class="natural-resources"
+     tal:condition="context/natural_resources">
+    <hr />
+
+    <h4>Natural Resource</h4>
+    <p>Related to this extractive concession or license</p>
+
+    <div
+        tal:condition="context/natural_resources">
+        <div 
+            tal:repeat="source context/natural_resources">
+            <h5>
+                <a href="" tal:attributes="href
+                                           source/to_object/absolute_url">
+            <span tal:content="source/to_object/title" />
+                </a>
+            </h5>
+        </div>
+    </div>
+
 </div>
