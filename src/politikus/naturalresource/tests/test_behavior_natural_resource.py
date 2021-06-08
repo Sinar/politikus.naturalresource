@@ -1,0 +1,26 @@
+# -*- coding: utf-8 -*-
+from politikus.naturalresource.behaviors.natural_resource import INaturalResourceMarker
+from politikus.naturalresource.testing import POLITIKUS_NATURALRESOURCE_INTEGRATION_TESTING  # noqa
+from plone.app.testing import setRoles
+from plone.app.testing import TEST_USER_ID
+from plone.behavior.interfaces import IBehavior
+from zope.component import getUtility
+
+import unittest
+
+
+class NaturalResourceIntegrationTest(unittest.TestCase):
+
+    layer = POLITIKUS_NATURALRESOURCE_INTEGRATION_TESTING
+
+    def setUp(self):
+        """Custom shared utility setup for tests."""
+        self.portal = self.layer['portal']
+        setRoles(self.portal, TEST_USER_ID, ['Manager'])
+
+    def test_behavior_natural_resource(self):
+        behavior = getUtility(IBehavior, 'politikus.naturalresource.natural_resource')
+        self.assertEqual(
+            behavior.marker,
+            INaturalResourceMarker,
+        )

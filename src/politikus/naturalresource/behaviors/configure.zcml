@@ -1,0 +1,22 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  xmlns:plone="http://namespaces.plone.org/plone"
+  xmlns:zcml="http://namespaces.zope.org/zcml"
+  i18n_domain="plone">
+
+    <include package="plone.behavior" file="meta.zcml"/>
+
+    <!-- -*- extra stuff goes here -*- -->
+
+    <plone:behavior
+        name="politikus.naturalresource.natural_resource"
+        title="NaturalResource"
+        description="Relationship link to Natural Resource"
+        provides=".natural_resource.INaturalResource"
+        factory=".natural_resource.NaturalResource"
+        marker=".natural_resource.INaturalResourceMarker"
+        />
+
+
+</configure>
