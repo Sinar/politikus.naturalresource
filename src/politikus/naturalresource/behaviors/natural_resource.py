@@ -1,19 +1,16 @@
 # -*- coding: utf-8 -*-
 
-from politikus.naturalresource import _
 from plone import schema
+from plone.app.vocabularies.catalog import CatalogSource
+from plone.app.z3cform.widget import RelatedItemsFieldWidget
+from plone.autoform import directives
 from plone.autoform.interfaces import IFormFieldProvider
 from plone.supermodel import model
+from politikus.naturalresource import _
 from Products.CMFPlone.utils import safe_hasattr
+from z3c.relationfield.schema import RelationChoice, RelationList
 from zope.component import adapter
-from zope.interface import Interface
-from zope.interface import implementer
-from zope.interface import provider
-from plone.autoform import directives
-from plone.app.z3cform.widget import RelatedItemsFieldWidget
-from z3c.relationfield.schema import RelationChoice
-from z3c.relationfield.schema import RelationList
-from plone.app.vocabularies.catalog import CatalogSource
+from zope.interface import implementer, Interface, provider
 
 
 class INaturalResourceMarker(Interface):

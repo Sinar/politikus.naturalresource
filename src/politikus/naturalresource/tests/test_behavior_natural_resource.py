@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
-from politikus.naturalresource.behaviors.natural_resource import INaturalResourceMarker
-from politikus.naturalresource.testing import POLITIKUS_NATURALRESOURCE_INTEGRATION_TESTING  # noqa
-from plone.app.testing import setRoles
-from plone.app.testing import TEST_USER_ID
+from plone.app.testing import setRoles, TEST_USER_ID
 from plone.behavior.interfaces import IBehavior
+from politikus.naturalresource.behaviors.natural_resource import INaturalResourceMarker
+from politikus.naturalresource.testing import (
+    POLITIKUS_NATURALRESOURCE_INTEGRATION_TESTING  # noqa,
+)
 from zope.component import getUtility
 
 import unittest

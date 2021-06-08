@@ -2,7 +2,7 @@
 from plone.app.testing import ROBOT_TEST_LEVEL
 from plone.testing import layered
 from politikus.naturalresource.testing import (
-    POLITIKUS_NATURALRESOURCE_ACCEPTANCE_TESTING  # noqa: E501,
+    POLITIKUS_NATURALRESOURCE_ACCEPTANCE_TESTING  # noqa: E501,,
 )
 
 import os

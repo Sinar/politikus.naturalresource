@@ -3,7 +3,7 @@
 from plone import api
 from plone.app.testing import setRoles, TEST_USER_ID
 from politikus.naturalresource.testing import (
-    POLITIKUS_NATURALRESOURCE_INTEGRATION_TESTING  # noqa: E501,
+    POLITIKUS_NATURALRESOURCE_INTEGRATION_TESTING  # noqa: E501,,
 )
 
 import unittest

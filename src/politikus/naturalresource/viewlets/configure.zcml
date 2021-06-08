@@ -1,0 +1,20 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="politikus.naturalresource">
+
+  -*- extra stuff goes here -*-
+
+  <browser:viewlet
+     name="natural-resources"
+     for="plone.app.contenttypes.interfaces.IDocument"
+     manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+     layer="politikus.naturalresource.interfaces.IPolitikusNaturalresourceLayer"
+     class=".natural_resources.NaturalResources"
+     template="natural-resources.pt"
+     permission="zope2.View"
+     />
+
+
+</configure>
