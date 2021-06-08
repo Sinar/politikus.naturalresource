@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# from plone.app.textfield import RichText
+from plone.app.textfield import RichText
 # from plone.autoform import directives
 from plone.dexterity.content import Container
 # from plone.namedfile import field as namedfile
@@ -10,8 +10,7 @@ from plone.supermodel import model
 from zope.interface import implementer
 
 
-# from politikus.naturalresource import _
-
+from politikus.naturalresource import _
 
 class INaturalResource(model.Schema):
     """ Marker interface and Dexterity Python Schema for NaturalResource
@@ -27,6 +26,11 @@ class INaturalResource(model.Schema):
     #     vocabulary=LevelVocabulary,
     #     required=True
     # )
+
+    details = RichText(
+        title=_(u'Details and notes about this Natural Resource'),
+        required=False
+    )
 
     # text = RichText(
     #     title=_(u'Text'),
