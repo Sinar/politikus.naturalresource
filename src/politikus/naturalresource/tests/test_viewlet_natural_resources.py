@@ -11,6 +11,7 @@ from zope.component import queryMultiAdapter
 from zope.interface import alsoProvides
 from zope.viewlet.interfaces import IViewletManager
 
+from politikus.extractives.content.extractive_concession import IExtractiveConcession
 import unittest
 
 
@@ -27,8 +28,9 @@ class ViewletIntegrationTest(unittest.TestCase):
         api.content.create(self.portal, 'News Item', 'newsitem')
 
     def test_natural_resources_is_registered(self):
+        alsoProvides(self.portal['other-document'], IExtractiveConcession)
         view = BrowserView(self.portal['other-document'], self.request)
-        manager_name = 'plone.abovecontenttitle'
+        manager_name = 'plone.belowcontentbody'
         alsoProvides(self.request, IPolitikusNaturalresourceLayer)
         manager = queryMultiAdapter(
             (self.portal['other-document'], self.request, view),
@@ -44,7 +46,7 @@ class ViewletIntegrationTest(unittest.TestCase):
     # XXX would be nice to have this test working:
     # def test_natural_resources_is_not_available_on_newsitem(self):
     #     view = BrowserView(self.portal['newsitem'], self.request)
-    #     manager_name = 'plone.abovecontenttitle'
+    #     manager_name = 'plone.belowcontentbody'
     #     alsoProvides(self.request, IPolitikusNaturalresourceLayer)
     #     manager = queryMultiAdapter(
     #         (self.portal['newsitem'], self.request, view),
